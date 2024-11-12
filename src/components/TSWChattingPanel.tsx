@@ -22,7 +22,7 @@ export function TSWChattingPanel({ pageText, onRender }: ChattingPanelProps) {
       <div className={panelStyles.tswPanelHeader} id="tsw-panel-header">
         <div className={panelStyles.tswPanelHeaderLogo}>
           <ActionIcon name="Logo" />
-          <span>Chatting With Page</span>
+          <span>Chatting With Page11</span>
         </div>
         <div className={panelStyles.tswPanelMenu}>
           <div className={panelStyles.tswPanelHeaderAction}>
