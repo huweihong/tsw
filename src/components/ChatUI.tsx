@@ -1,21 +1,25 @@
 "use client";
-import { CircleStop, IterationCcw, SquareX } from "lucide-react";
+import {
+  CircleStop,
+  Copy,
+  IterationCcw,
+  Pencil,
+  RefreshCw,
+  SquareX,
+} from "lucide-react";
 import { marked } from "marked";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import chatStyles from "~/css/chatui.module.css";
-import iconsStyles from "~/css/icons.module.css";
 import { cn, upperCaseFirstLetter } from "~lib/utils";
 import { chatWithPage } from "~utils/ai";
 import { ActionIcon } from "./ActionIcon";
 import { StreamMessage } from "./StreamMessage";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "./ui/use-toast";
-import { CopyIcon } from "~/components/ui/icons/copy";
-import { RefreshIcon } from "~/components/ui/icons/refresh";
-import { SquarePenIcon } from "~/components/ui/icons/square-pen";
+
 marked.setOptions({
   breaks: true,
 });
@@ -298,10 +302,7 @@ export function ChatUI({ pageText }: ChatUIProps) {
                         className={chatStyles.tswActionBtn}
                         onClick={() => copyToClipboard(m.content)}
                       >
-                        <CopyIcon
-                          size={16}
-                          className={iconsStyles.dynamicIcon}
-                        />
+                        <Copy size={16} />
                       </Button>
                       {m.role === "user" && (
                         <Button
@@ -311,10 +312,7 @@ export function ChatUI({ pageText }: ChatUIProps) {
                           onClick={() => handleEdit(m)}
                           disabled={isStreaming || editingMessageId !== null}
                         >
-                          <SquarePenIcon
-                            size={16}
-                            className={iconsStyles.dynamicIcon}
-                          />
+                          <Pencil size={16} />
                         </Button>
                       )}
                       {m.role === "assistant" &&
@@ -326,10 +324,7 @@ export function ChatUI({ pageText }: ChatUIProps) {
                             onClick={(e) => handleRefresh(e)}
                             disabled={isStreaming || editingMessageId !== null}
                           >
-                            <RefreshIcon
-                              size={16}
-                              className={iconsStyles.dynamicIcon}
-                            />
+                            <RefreshCw size={16} />
                           </Button>
                         )}
                     </>
