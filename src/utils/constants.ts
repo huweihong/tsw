@@ -23,6 +23,7 @@ export const LANG_LIST = [
 ];
 
 export const DEFAULT_MODEL = "gemini-1.5-flash";
+export const DEFAULT_MODEL_GROUPNAME = "gemini";
 export const MODELS = {
   gemini: [
     "gemini-1.5-flash",
